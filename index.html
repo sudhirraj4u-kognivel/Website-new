@@ -13,7 +13,7 @@
   7. FOOTER LINKS & COPYRIGHT ....................... search for "FOOTER"
 
   ─── CURRENT SETTINGS AT A GLANCE ───────────────────────────────────────────
-  THEMES: light (default) + dark — toggled by the sun/moon button in the navbar;
+  THEMES: dark (default) + light — toggled by the sun/moon button in the navbar;
           the visitor's choice is remembered in their browser (localStorage "kg-theme").
 
   LIGHT THEME COLORS (edit in :root):
@@ -230,7 +230,7 @@ footer ul a:hover, .footer-bottom a:hover { color:var(--accent); }
 </style>
 
 <!-- Applies the saved / preferred theme before first paint (prevents flash) -->
-<script>(function(){try{var t=localStorage.getItem('kg-theme');if(!t){t=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}document.documentElement.setAttribute('data-theme',t);}catch(e){}})();</script>
+<script>(function(){try{var t=localStorage.getItem('kg-theme')||'dark';document.documentElement.setAttribute('data-theme',t);}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();</script>
 </head>
 <body>
 
